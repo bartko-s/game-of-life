@@ -1,5 +1,5 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-#
-# !/usr/bin python
 
 
 from game_of_life import base_app
