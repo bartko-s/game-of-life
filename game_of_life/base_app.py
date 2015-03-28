@@ -4,7 +4,7 @@ import os
 import random
 
 
-class BaseApp():
+class BaseApp(object):
     NUM_ROWS = 35
     NUM_COLS = 45
 
