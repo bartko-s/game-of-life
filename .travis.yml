@@ -1,0 +1,8 @@
+language: python
+python:
+  - "nightly"
+install:
+  - "pip install -r requirements.txt"
+  - "pip install -r tests/requirements.txt"
+script:
+  - "py.test"
