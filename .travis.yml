@@ -4,8 +4,5 @@ python:
 install:
   - "pip install -r requirements.txt"
   - "pip install -r tests/requirements.txt"
-  - "pip install coveralls"
 script:
-  - "coverage run --source=game_of_life py.test"
-after_success:
-  coveralls
+  - "py.test"
