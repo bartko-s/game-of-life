@@ -10,21 +10,21 @@ class TestBaseClass:
         live = App.LIVE_CELL_SYMBOL
         dead = App.DEAD_CELL_SYMBOL
 
-        assert App.calculate_cell_state_for_next_round(live) == dead
-        assert App.calculate_cell_state_for_next_round(live, live) == dead
-        assert App.calculate_cell_state_for_next_round(live, live, live) == live
-        assert App.calculate_cell_state_for_next_round(live, live, live, live) == live
-        assert App.calculate_cell_state_for_next_round(live, live, live, live, live) == dead
-        assert App.calculate_cell_state_for_next_round(live, live, live, live, live, live) == dead
-        assert App.calculate_cell_state_for_next_round(live, live, live, live, live, live, live) == dead
-        assert App.calculate_cell_state_for_next_round(live, live, live, live, live, live, live, live) == dead
-        assert App.calculate_cell_state_for_next_round(live, live, live, live, live, live, live, live, live) == dead
-        assert App.calculate_cell_state_for_next_round(dead) == dead
-        assert App.calculate_cell_state_for_next_round(dead, live) == dead
-        assert App.calculate_cell_state_for_next_round(dead, live, live) == dead
-        assert App.calculate_cell_state_for_next_round(dead, live, live, live) == live
-        assert App.calculate_cell_state_for_next_round(dead, live, live, live, live) == dead
-        assert App.calculate_cell_state_for_next_round(dead, live, live, live, live, live) == dead
-        assert App.calculate_cell_state_for_next_round(dead, live, live, live, live, live, live) == dead
-        assert App.calculate_cell_state_for_next_round(dead, live, live, live, live, live, live, live) == dead
-        assert App.calculate_cell_state_for_next_round(dead, live, live, live, live, live, live, live, live) == dead
+        assert App._calculate_cell_state_for_next_round(live) == dead
+        assert App._calculate_cell_state_for_next_round(live, live) == dead
+        assert App._calculate_cell_state_for_next_round(live, live, live) == live
+        assert App._calculate_cell_state_for_next_round(live, live, live, live) == live
+        assert App._calculate_cell_state_for_next_round(live, live, live, live, live) == dead
+        assert App._calculate_cell_state_for_next_round(live, live, live, live, live, live) == dead
+        assert App._calculate_cell_state_for_next_round(live, live, live, live, live, live, live) == dead
+        assert App._calculate_cell_state_for_next_round(live, live, live, live, live, live, live, live) == dead
+        assert App._calculate_cell_state_for_next_round(live, live, live, live, live, live, live, live, live) == dead
+        assert App._calculate_cell_state_for_next_round(dead) == dead
+        assert App._calculate_cell_state_for_next_round(dead, live) == dead
+        assert App._calculate_cell_state_for_next_round(dead, live, live) == dead
+        assert App._calculate_cell_state_for_next_round(dead, live, live, live) == live
+        assert App._calculate_cell_state_for_next_round(dead, live, live, live, live) == dead
+        assert App._calculate_cell_state_for_next_round(dead, live, live, live, live, live) == dead
+        assert App._calculate_cell_state_for_next_round(dead, live, live, live, live, live, live) == dead
+        assert App._calculate_cell_state_for_next_round(dead, live, live, live, live, live, live, live) == dead
+        assert App._calculate_cell_state_for_next_round(dead, live, live, live, live, live, live, live, live) == dead

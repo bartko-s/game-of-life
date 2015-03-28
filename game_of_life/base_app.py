@@ -13,21 +13,21 @@ class BaseApp(object):
     DEAD_CELL_SYMBOL = ' '
     LIVE_CELL_SYMBOL = '*'
 
-    def build_random_grid(self, rows, cols):
+    def _build_random_grid(self, rows, cols):
         return [[random.choice([self.DEAD_CELL_SYMBOL, self.LIVE_CELL_SYMBOL])
                  for i in range(1, cols + 1)] for i in range(1, rows + 1)]
 
-    def display_grid(self, grid_):
-        for row in grid_:
+    def _display_grid(self, grid):
+        for row in grid:
             line = ''
             for cell in row:
                 line += ' ' + cell
             print(line)
 
-    def clear_terminal(self):
+    def _clear_terminal(self):
         os.system('cls' if os.name == 'nt' else 'clear')
 
-    def calculate_cell_state_for_next_round(self, current_cell, *args):
+    def _calculate_cell_state_for_next_round(self, current_cell, *args):
         num_lives = args.count(self.LIVE_CELL_SYMBOL)
 
         if current_cell == self.LIVE_CELL_SYMBOL:
@@ -39,7 +39,7 @@ class BaseApp(object):
 
         return self.DEAD_CELL_SYMBOL
 
-    def calculate(self, grid):
+    def _recalculate(self, grid):
         num_rows = len(grid)
         num_cols = len(grid[0])
 
@@ -80,15 +80,15 @@ class BaseApp(object):
                 if col_index < num_cols - 1 and row_index < num_rows - 1:
                     cells.append(grid[row_index + 1][col_index + 1])
 
-                new_state = self.calculate_cell_state_for_next_round(cell, *cells)
+                new_state = self._calculate_cell_state_for_next_round(cell, *cells)
                 result[row_index].append(new_state)
 
         return result
 
     def run(self):
-        grid = self.build_random_grid(self.NUM_ROWS, self.NUM_COLS)
+        grid = self._build_random_grid(self.NUM_ROWS, self.NUM_COLS)
         while True:
-            self.clear_terminal()
-            grid = self.calculate(grid)
-            self.display_grid(grid)
+            self._clear_terminal()
+            grid = self._recalculate(grid)
+            self._display_grid(grid)
             time.sleep(self.SPEED)
